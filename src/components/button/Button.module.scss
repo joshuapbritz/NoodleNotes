@@ -9,6 +9,7 @@
   letter-spacing: 2px;
   position: relative;
   cursor: pointer;
+  text-decoration: none;
 
   &::before,
   &::after {
@@ -21,8 +22,8 @@
     width: 10px;
     height: 10px;
     border: solid 2px var(--primary);
-    border-bottom-color: #ffffff;
-    border-left-color: #ffffff;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
     top: 50%;
     margin-top: -5px;
     right: 20px;

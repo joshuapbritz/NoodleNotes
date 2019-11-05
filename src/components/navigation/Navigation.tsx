@@ -13,13 +13,18 @@ const Navigation: FC = props => {
 
       <ul className={styles.navList}>
         <li className={styles.navListItem}>
-          <ScrollLink className={styles.navListLink} href="#top">
-            home
+          <ScrollLink className={styles.navListLink} href="#about">
+            about
           </ScrollLink>
         </li>
         <li className={styles.navListItem}>
-          <ScrollLink className={styles.navListLink} href="#about">
-            about
+          <ScrollLink className={styles.navListLink} href="#features">
+            features
+          </ScrollLink>
+        </li>
+        <li className={styles.navListItem}>
+          <ScrollLink className={styles.navListLink} href="#getapp">
+            get the app
           </ScrollLink>
         </li>
       </ul>

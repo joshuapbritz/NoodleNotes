@@ -21,7 +21,28 @@
       .image-hover-wrapper {
         width: 100%;
         height: auto;
-        perspective: 1000px;
+      }
+    }
+
+    @media screen and (max-width: 1010px) {
+      display: block;
+      height: auto;
+      padding-bottom: 50px;
+
+      .content {
+        padding-top: 20px;
+      }
+
+      .image {
+        margin: auto;
+        width: 390px;
+        padding-top: 50px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .image {
+        width: 250px;
       }
     }
   }
@@ -61,22 +82,286 @@
         }
       }
     }
+
+    @media screen and (max-width: 1010px) {
+      display: block;
+
+      .section-image {
+        display: none;
+      }
+
+      .card-row {
+        margin: auto;
+        max-width: 700px;
+        width: 90%;
+      }
+    }
   }
 
   .features {
     background-color: var(--primary);
+    padding-top: 50px;
+    position: relative;
 
-    .feature-list {
-      list-style: none;
-      height: 100%;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      font-size: 2em;
-      font-weight: 400;
-      color: var(--background);
+    .section.app-features {
       display: flex;
-      flex-flow: column wrap;
+      align-items: center;
+      overflow: hidden;
+
+      .device-wrapper {
+        width: 400px;
+
+        .device {
+          width: 300px;
+          height: 450px;
+          background-color: var(--ink);
+          margin-left: auto;
+          margin-right: 20px;
+          transform: translateY(100px);
+          border-radius: 50px;
+          position: relative;
+
+          .screen {
+            position: absolute;
+            top: 50px;
+            left: 25px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--background);
+            border-radius: 10px;
+            overflow: hidden;
+
+            img {
+              display: block;
+              width: 90%;
+              margin: 90px auto;
+            }
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            --distance: 8px;
+            top: var(--distance);
+            left: var(--distance);
+            right: var(--distance);
+            bottom: var(--distance);
+            border-radius: 45px;
+            border: solid 2px var(--primary);
+            opacity: 0.7;
+          }
+        }
+      }
+
+      .info {
+        flex: 1;
+        margin-left: 40px;
+        padding: 40px;
+
+        .feature-card {
+          width: 100%;
+          height: auto;
+          background-color: #ffffff;
+          height: auto;
+          border-radius: 15px;
+          padding: 15px;
+          padding-bottom: 25px;
+
+          h3 {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+          }
+
+          hr {
+            border: none;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 15px auto;
+          }
+
+          .features-list {
+            list-style: none;
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 90%;
+            margin: auto;
+
+            .feature {
+              padding-left: 25px;
+              font-size: 1em;
+              margin-bottom: 10px;
+              position: relative;
+              line-height: 20px;
+
+              .point {
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 15px;
+              }
+
+              &:nth-last-child(1) {
+                margin-bottom: none;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1010px) {
+        .device-wrapper {
+          display: none;
+        }
+
+        .info {
+          margin: 0;
+        }
+      }
+    }
+
+    .drop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 50px;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 30vw 0 70vw;
+        border-color: var(--background) transparent transparent transparent;
+      }
+    }
+  }
+
+  .getapp {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    padding: 150px 0 100px 0;
+
+    .icon {
+      width: 200px;
+      margin-right: 40px;
+    }
+
+    .joke {
+      max-width: calc(100% - 200px);
+      flex: 1;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      .action {
+        padding-top: 10px;
+        text-align: right;
+      }
+    }
+
+    @media screen and (max-width: 1010px) {
+      display: block;
+      padding: 90px 0 70px 0;
+
+      .icon {
+        margin-bottom: 15px;
+      }
+
+      .joke {
+        max-width: unset;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .icon {
+        margin: auto auto 10px auto;
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    height: auto;
+    padding: 60px 0 20px 0;
+    background-color: var(--primary);
+    position: relative;
+
+    .drop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 50px;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 70vw 0 30vw;
+        border-color: var(--background) transparent transparent transparent;
+      }
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: auto;
+      width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: flex-end;
+      padding: 15px 0;
+
+      .logo {
+        height: 100%;
+        width: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 30px;
+          height: auto;
+        }
+
+        span {
+          font-size: 1em;
+          color: var(--background);
+          display: block;
+          padding-left: 6px;
+        }
+      }
+
+      .copywrite {
+        font-size: 1em;
+        color: var(--background);
+      }
+
+      @media screen and (max-width: 670px) {
+        display: block;
+
+        .logo {
+          margin: auto;
+          margin-bottom: 15px;
+        }
+      }
     }
   }
 }

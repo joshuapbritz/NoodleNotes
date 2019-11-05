@@ -2,9 +2,6 @@
   width: 100%;
   height: 80px;
   background-color: var(--background);
-  position: sticky;
-  top: 0;
-  left: 0;
   padding: 0 30px;
   display: flex;
   align-items: stretch;
@@ -48,18 +45,29 @@
         font-size: 1.3em;
         display: inline-block;
         position: relative;
+        z-index: 20;
 
-        &.active::after {
+        &::after {
           content: '';
           display: block;
           width: 100%;
-          height: 5px;
+          height: 0px;
           position: absolute;
           background-color: var(--primary);
           bottom: 5px;
           z-index: -1;
+          will-change: height;
+          transition: height cubic-bezier(0.77, 0, 0.175, 1) 150ms;
+        }
+
+        &:hover::after {
+          height: 5px;
         }
       }
+    }
+
+    @media screen and (max-width: 670px) {
+      display: none;
     }
   }
 }
