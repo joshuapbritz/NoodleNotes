@@ -8,3 +8,11 @@
   max-width: 1200px;
   margin: auto;
 }
+
+.canhighlight:hover {
+  background-color: rgba(33, 33, 33, 0.2);
+}
+
+mark {
+  background-color: rgba(101, 255, 108, 0.4);
+}
